@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <!-- GOOGLE'DAN ALDIĞIN TAGI TAM BURAYA YAPIŞTIR -->
+     <meta name="google-site-verification" content="jKwUOGvVDVgYJMbfQXBRM5Wuq4KB0YO-90jBOjxeepU" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aegvsyber Studio | Premium Web & Siber Güvenlik Çözümleri</title>
+    
+    <meta name="description" content="Aegvsyber Studio - Profesyonel kurumsal web tasarımı, özel yazılım geliştirme, Linux sunucu yönetimi and modern siber güvenlik çözümleri.">
+    <meta name="keywords" content="web tasarım, siber güvenlik, yazılım geliştirme, sunucu yönetimi, seo, aegvsyber">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght=300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(135deg, #050816, #081326, #000);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* --- Navbar --- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(5, 8, 22, 0.75);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 900;
+            color: #00d9ff;
+            text-shadow: 0 0 10px cyan;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: #00d9ff;
+            text-shadow: 0 0 8px cyan;
+        }
+
+        /* --- Hero Alanı --- */
+        header {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            background: radial-gradient(circle at center, #003cff15, #000);
+            padding: 0 20px;
+        }
+
+        header h1 {
+            font-size: 70px;
+            font-weight: 900;
+            color: #00d9ff;
+            text-shadow: 0 0 20px cyan;
+            line-height: 1.2;
+        }
+
+        header p {
+            font-size: 20px;
+            margin-top: 20px;
+            max-width: 800px;
+            color: #ccc;
+        }
+
+        .btn {
+            margin-top: 40px;
+            padding: 18px 45px;
+            background: #00d9ff;
+            color: black;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: .4s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 30px cyan;
+        }
+
+        section {
+            padding: 90px 10%;
+        }
+
+        .title {
+            font-size: 40px;
+            margin-bottom: 40px;
+            color: #00d9ff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- İstatistikler --- */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .stat {
+            background: rgba(6, 19, 39, 0.5);
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+        }
+
+        .number {
+            font-size: 55px;
+            font-weight: 900;
+            color: #00d9ff;
+            text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+        }
+
+        /* --- Hizmetler --- */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, .03);
+            backdrop-filter: blur(15px);
+            padding: 35px;
+            border-radius: 20px;
+            transition: .4s;
+            border: 1px solid rgba(255, 255, 255, .05);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 30px rgba(0, 217, 255, 0.2);
+            border-color: #00d9ff;
+        }
+
+        .card h2 {
+            margin-bottom: 15px;
+            font-size: 22px;
+            color: #fff;
+        }
+
+        .card p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #bbb;
+        }
+
+        /* --- Müşteri Yorumları --- */
+        .comments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .comment-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .comment-card p {
+            font-style: italic;
+            color: #ccc;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .comment-user {
+            color: #00d9ff;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .comment-user span {
+            color: #666;
+            font-size: 12px;
+            display: block;
+            font-weight: normal;
+        }
+
+        /* --- Fiyatlandırma --- */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .price-card {
+            background: rgba(9, 23, 40, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: 0.4s;
+            position: relative;
+        }
+
+        .price-card.popular {
+            border-color: #00d9ff;
+            box-shadow: 0 0 30px rgba(0, 217, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #00d9ff;
+            color: #000;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 10px;
+        }
+
+        .price-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .cost {
+            font-size: 40px;
+            font-weight: 900;
+            color: #00d9ff;
+            margin-bottom: 25px;
+        }
+
+        .cost span {
+            font-size: 16px;
+            color: #aaa;
+            font-weight: normal;
+        }
+
+        .price-features {
+            list-style: none;
+            margin-bottom: 35px;
+            text-align: left;
+        }
+
+        .price-features li {
+            font-size: 14px;
+            margin-bottom: 12px;
+            color: #ccc;
+        }
+
+        .price-features li::before {
+            content: "✓ ";
+            color: #00d9ff;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .price-btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background: transparent;
+            color: #00d9ff;
+            border: 2px solid #00d9ff;
+            border-radius: 10px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .price-card.popular .price-btn, .price-btn:hover {
+            background: #00d9ff;
+            color: #000;
+            box-shadow: 0 0 15px cyan;
+        }
+
+        /* --- SSS --- */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            background: rgba(0, 217, 255, 0.05);
+            color: #00d9ff;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: rgba(0, 0, 0, 0.2);
+            color: #aaa;
+            font-size: 15px;
+        }
+
+        .faq-answer p {
+            padding: 20px;
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .faq-toggle {
+            font-size: 20px;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+            color: #00d9ff;
+        }
+
+        /* --- İletişim --- */
+        .contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .contact-text h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .contact-text p {
+            color: #bbb;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 18px;
+            margin-top: 15px;
+            border: 1px solid transparent;
+            border-radius: 10px;
+            background: #091728;
+            color: white;
+            transition: 0.3s;
+            outline: none;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #00d9ff;
+            box-shadow: 0 0 10px rgba(0, 217, 255, 0.2);
+        }
+
+        button {
+            padding: 18px;
+            width: 100%;
+            margin-top: 20px;
+            background: #00d9ff;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #00b8d4;
+            box-shadow: 0 0 20px cyan;
+            transform: scale(1.02);
+        }
+
+        footer {
+            padding: 50px;
+            text-align: center;
+            background: #02040a;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* --- Mobil Uyumluluk --- */
+        @media(max-width: 800px){
+            nav {
+                padding: 15px 5%;
+            }
+            .nav-links {
+                display: none;
+            }
+            .contact {
+                grid-template-columns: 1fr;
+            }
+            .pricing-grid, .comments-grid {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 42px;
+            }
+            .title {
+                font-size: 30px;
+            }
+            section {
+                padding: 60px 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">AEGVSYBER</a>
+        <ul class="nav-links">
+            <li><a href="#">Ana Sayfa</a></li>
+            <li><a href="#about">Hakkımızda</a></li>
+            <li><a href="#services">Hizmetler</a></li>
+            <li><a href="#comments">Yorumlar</a></li>
+            <li><a href="#pricing">Paketlerimiz</a></li>
+            <li><a href="#faq">SSS</a></li>
+            <li><a href="#contact">İletişim</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>AEGVSYBER STUDIO</h1>
+        <p>Kurumsal web tasarımı, özel yazılım geliştirme ve modern siber güvenlik çözümleri.</p>
+        <a href="#services" class="btn">Sistemi İncele</a>
+    </header>
+
+    <section id="about">
+        <h2 class="title">Neden Biz?</h2>
+        <div class="stats">
+            <div class="stat">
+                <div class="number">250+</div>
+                Tamamlanan Proje
+            </div>
+            <div class="stat">
+                <div class="number">99%</div>
+                Müşteri Memnuniyeti
+            </div>
+            <div class="stat">
+                <div class="number">24/7</div>
+                Teknik Destek
+            </div>
+            <div class="stat">
+                <div class="number">100%</div>
+                Modern Tasarım
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2 class="title">Hizmetlerimiz</h2>
+        <div class="cards">
+            <div class="card">
+                <h2>🌐 Web Tasarım</h2>
+                <p>İstenilen domaine profesyonel, mobil uyumlu, modern ve ultra hızlı web siteleri hazırlanır.</p>
+            </div>
+            <div class="card">
+                <h2>💻 Yazılım Geliştirme</h2>
+                <p>Özel yönetim panelleri, gelişmiş otomasyon sistemleri ve kurumsal API entegrasyonları.</p>
+            </div>
+            <div class="card">
+                <h2>🛡️ Siber Güvenlik</h2>
+                <p>Sızma testleri, sunucu sertleştirme, kaynak kod analizi ve DDoS koruma altyapıları.</p>
+            </div>
+            <div class="card">
+                <h2>☁️ Sunucu Yönetimi</h2>
+                <p>Linux (Ubuntu/Debian) sunucu kurulumu, optimizasyon, otomatik yedekleme ve Docker entegrasyonu.</p>
+            </div>
+            <div class="card">
+                <h2>🚀 SEO Optimizasyonu</h2>
+                <p>Google sıralama yükseltme, teknik SEO denetimleri, hız ve Core Web Vitals iyileştirmeleri.</p>
+            </div>
+            <div class="card">
+                <h2>🔒 Bakım ve Destek</h2>
+                <p>7/24 kesintisiz çalışma garantisi, anlık log takibi ve periyodik sistem güncellemeleri.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="comments">
+        <h2 class="title">Müşteri Yorumları</h2>
+        <div class="comments-grid">
+            <div class="comment-card">
+                <p>"E-ticaret sitemizin altyapısını Aegvsyber Studio'ya emanet ettik. Hem hız optimizasyonu hem de siber güvenlik taramaları mükemmel yapıldı. Kesinlikle tavsiye ederim."</p>
+                <div class="comment-user">
+                    Hakan Yılmaz
+                    <span>CEO, Nexus Dijital</span>
+                </div>
+            </div>
+            <div class="comment-card">
+                <p>"Linux sunucularımızda sürekli yaşadığımız DDoS ve sızma sorunlarını tek bir periyodik bakımla kökten çözdüler. Siber güvenlik konusundaki uzmanlıkları muazzam."</p>
+                <div class="comment-user">
+                    Burak Demir
+                    <span>Sistem Yöneticisi, V-Tech</span>
+                </div>
+            </div>
+            <div class="comment-card">
+                <p>"Kısa sürede şirketimiz için tam uyumlu harika bir kurumsal web sitesi hazırladılar. Formlar sorunsuz çalışıyor, mailler anında düşüyor. Teşekkürler!"</p>
+                <div class="comment-user">
+                    Aylin Kaya
+                    <span>Kurucu, Nova Lojistik</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <h2 class="title">Paketlerimiz</h2>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>Başlangıç</h3>
+                <div class="cost">₺1.500 <span>/ Tek Sefer</span></div>
+                <ul class="price-features">
+                    <li>Modern Kurumsal Web Sitesi</li>
+                    <li>Mobil ve Tablet Uyumlu</li>
+                    <li>Temel SEO Optimizasyonu</li>
+                    <li>1 Yıl Ücretsiz Teknik Destek</li>
+                </ul>
+                <a href="#contact" class="price-btn">Satın Al / Görüş</a>
+            </div>
+            <div class="price-card popular">
+                <span class="badge">EN ÇOK SEÇİLEN</span>
+                <h3>Studio Pro</h3>
+                <div class="cost">₺3.500 <span>/ Tek Sefer</span></div>
+                <ul class="price-features">
+                    <li>Özel Yazılım & Yönetim Paneli</li>
+                    <li>Gelişmiş SEO Altyapısı</li>
+                    <li>Temel Siber Güvenlik Analizi</li>
+                    <li>Linux Sunucu Kurulumu</li>
+                    <li>7/24 Kesintisiz Canlı Destek</li>
+                </ul>
+                <a href="#contact" class="price-btn">Satın Al / Görüş</a>
+            </div>
+            <div class="price-card">
+                <h3>Cyber Enterprise</h3>
+                <div class="cost">₺7.000+ <span>/ Projeye Göre</span></div>
+                <ul class="price-features">
+                    <li>Tam Kapsamlı Sızma Testi</li>
+                    <li>Sunucu Sertleştirme ve Koruma</li>
+                    <li>Özel Otomasyon Sistemleri</li>
+                    <li>Özel API Geliştirme</li>
+                    <li>Anlık Müdahale Garantisi</li>
+                </ul>
+                <a href="#contact" class="price-btn">Teklif Al</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <h2 class="title">Sıkça Sorulan Sorular</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Yaptığınız web siteleri güvenli mi?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Kesinlikle. Aegvsyber bir siber güvenlik stüdyosu olduğu için yazdığımız her satır kodu XSS, SQL Injection ve CSRF gibi web açıklarına karşı tarayarak teslim ediyoruz. Sunucularınızı en yüksek güvenlik seviyesinde yapılandırıyoruz.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Proje teslim süresi ne kadar sürüyor?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Kurumsal web sitelerini genellikle 5-7 iş günü içinde teslim ediyoruz. Özel yazılım, otomasyon veya kapsamlı siber güvenlik analizleri ise projenin detaylarına göre 2 ila 4 hafta arasında sürebilir.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Hali hazırda var olan sitemiz için sızma testi yapıyor musunuz?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Evet, mevcut web siteleriniz, mobil uygulamalarınız veya Linux/Windows sunucularınız için sızma testleri (Pentest) gerçekleştiriyoruz. Test sonunda tüm açıkları ve çözüm yöntemlerini içeren detaylı bir rapor sunuyoruz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="title">İletişim</h2>
+        <div class="contact">
+            <div class="contact-text">
+                <h2>Projeni Anlat</h2>
+                <p>Web sitesi, yazılım veya siber güvenlik ihtiyaçların için bizimle iletişime geç.</p>
+            </div>
+            <div>
+                <form id="ajax-form" action="https://api.web3forms.com/submit" method="POST">
+                    
+                    <input type="hidden" name="access_key" value="842c4aca-fa97-413b-8540-6fbf147731d8">
+                    
+                    <input type="hidden" name="subject" value="Aegvsyber Studio - Yeni İletişim Formu Mesajı!">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                    <input type="text" name="name" placeholder="Adınız" required>
+                    <input type="email" name="email" placeholder="E-Posta" required>
+                    <textarea name="message" rows="6" placeholder="Mesajınız" required></textarea>
+                    <button type="submit" id="submit-btn">Gönder</button>
+                </form>
+                <div id="form-success" style="display: none; color: #00d9ff; margin-top: 20px; padding: 15px; border: 1px dashed #00d9ff; border-radius: 10px; text-align: center; font-weight: bold; background: rgba(0,217,255,0.05);">
+                    🚀 Mesajınız başarıyla gönderildi! Sizinle en kısa sürede iletişime geçeceğiz.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Aegvsyber Studio <br><br>
+        <span style="color: #444;">Premium Web Development • Cyber Security • Software Solutions</span>
+    </footer>
+
+    <script>
+        // SSS Panel Kontrolü
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const faqItem = item.parentElement;
+                const answer = faqItem.querySelector('.faq-answer');
+                
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== faqItem && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-answer').style.maxHeight = '0';
+                    }
+                });
+
+                if (faqItem.classList.contains('active')) {
+                    faqItem.classList.remove('active');
+                    answer.style.maxHeight = '0';
+                } else {
+                    faqItem.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            });
+        });
+
+        // Web3Forms AJAX Gönderim Kontrolü
+        document.getElementById("ajax-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const data = new FormData(form);
+            const button = document.getElementById("submit-btn");
+            const successMessage = document.getElementById("form-success");
+
+            button.disabled = true;
+            button.innerText = "Gönderiliyor...";
+
+            fetch(form.action, {
+                method: "POST",
+                body: data
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    form.style.display = "none";
+                    successMessage.style.display = "block";
+                } else {
+                    console.log(response);
+                    alert(json.message || "Bir hata oluştu, lütfen bilgileri kontrol edin.");
+                    button.disabled = false;
+                    button.innerText = "Gönder";
+                }
+            })
+            .catch(error => {
+                alert("Bağlantı hatası! Lütfen internetinizi kontrol edip tekrar deneyin.");
+                button.disabled = false;
+                button.innerText = "Gönder";
+            });
+        });
+    </script>
+</body>
+</html>
